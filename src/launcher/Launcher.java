@@ -9,7 +9,7 @@ public class Launcher {
         //creating and showing this application's GUI.
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-            	JFrame ventana = new SimplePresentationScreen(new Student(121302, "Piñeiro", "Juan Cruz", "juancruzpineiro@gmail.com", "https://github.com/juancruzpineiro", "/proyecto-1/src/images/tdp.png"));
+            	JFrame ventana = new SimplePresentationScreen(new Student(121302, "Piñeiro", "Juan Cruz", "juancruzpineiro@gmail.com", "https://github.com/juancruzpineiro", "/images/tdp.png"));
             	ventana.setVisible(true);
             	
             }

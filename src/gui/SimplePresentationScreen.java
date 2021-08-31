@@ -57,7 +57,10 @@ public class SimplePresentationScreen extends JFrame {
 		init();
 	}
 	
-	
+	/**
+	 * devuelve un String con la hora actual en formato hh:mm:ss
+	 * @return hora en formato hh:mm:ss.
+	 */
 	private String horaActual() {
 		LocalTime hora= LocalTime.now();
 		
@@ -66,7 +69,10 @@ public class SimplePresentationScreen extends JFrame {
 	   return hora.format(formatoFechayHora);
 	}
 	
-	
+	/**
+	 * devuelve un String con la fecha en formato  dd/mm/yyyy
+	 * @return fecha actual
+	 */
 	private String fechaActual() {
 		LocalDate fecha= LocalDate.now();
 		
