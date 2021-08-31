@@ -21,6 +21,7 @@ import java.awt.Font;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import javax.swing.ImageIcon;
 @SuppressWarnings("serial")
 public class SimplePresentationScreen extends JFrame {
 
@@ -142,14 +143,14 @@ public class SimplePresentationScreen extends JFrame {
 						.addGroup(gl_tabInformation.createSequentialGroup()
 							.addGroup(gl_tabInformation.createParallelGroup(Alignment.LEADING)
 								.addComponent(labelLU)
-								.addComponent(labelApellido, GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE))
+								.addComponent(labelApellido, GroupLayout.DEFAULT_SIZE, 946, Short.MAX_VALUE))
 							.addGap(12))
 						.addGroup(gl_tabInformation.createSequentialGroup()
 							.addComponent(labelNombre, GroupLayout.PREFERRED_SIZE, 73, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED, 12, GroupLayout.PREFERRED_SIZE))
+							.addPreferredGap(ComponentPlacement.RELATED, 873, GroupLayout.PREFERRED_SIZE))
 						.addGroup(gl_tabInformation.createSequentialGroup()
 							.addComponent(labelEmail, GroupLayout.PREFERRED_SIZE, 73, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED, 12, GroupLayout.PREFERRED_SIZE))
+							.addPreferredGap(ComponentPlacement.RELATED, 873, GroupLayout.PREFERRED_SIZE))
 						.addComponent(labelGitHub, GroupLayout.PREFERRED_SIZE, 85, GroupLayout.PREFERRED_SIZE))
 					.addGap(18)
 					.addGroup(gl_tabInformation.createParallelGroup(Alignment.LEADING)
@@ -185,28 +186,39 @@ public class SimplePresentationScreen extends JFrame {
 								.addComponent(labelGitHub, GroupLayout.PREFERRED_SIZE, 17, GroupLayout.PREFERRED_SIZE)
 								.addComponent(fieldGitHub, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
 						.addComponent(numeroLU, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap(30, Short.MAX_VALUE))
+					.addContainerGap(1188, Short.MAX_VALUE))
 		);
 		tabInformation.setLayout(gl_tabInformation);
 		
 		labelFechaHora = new JLabel("Esta ventana fue generada el " + fechaActual() + " a las " + horaActual());
+		
+		JLabel labelFoto = new JLabel("");
+		labelFoto.setIcon(new ImageIcon(SimplePresentationScreen.class.getResource("/images/fotoalumno.jpg")));
 		
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(tabbedPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addComponent(tabbedPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addGap(18)
+							.addComponent(labelFoto))
 						.addComponent(labelFechaHora))
-					.addContainerGap(169, Short.MAX_VALUE))
+					.addContainerGap(23, Short.MAX_VALUE))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addComponent(tabbedPane, GroupLayout.PREFERRED_SIZE, 211, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(labelFechaHora)
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addComponent(tabbedPane, GroupLayout.PREFERRED_SIZE, 211, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(labelFechaHora))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(51)
+							.addComponent(labelFoto)))
+					.addContainerGap(15, Short.MAX_VALUE))
 		);
 		contentPane.setLayout(gl_contentPane);
 	}
